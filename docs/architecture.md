@@ -13,32 +13,32 @@ graph TB
         B[Mobile Browser]
         C[Tablet Browser]
     end
-    
+
     subgraph "Presentation Layer"
         D[Laravel Blade Templates]
         E[Responsive CSS/JS]
         F[Asset Pipeline]
     end
-    
+
     subgraph "Application Layer"
         G[Laravel Controllers]
         H[Business Logic]
         I[Validation]
         J[Authentication]
     end
-    
+
     subgraph "Data Layer"
         K[MySQL Database]
         L[File Storage]
         M[Cache Layer]
     end
-    
+
     subgraph "Infrastructure Layer"
         N[Web Server]
         O[PHP-FPM]
         P[Load Balancer]
     end
-    
+
     A --> D
     B --> D
     C --> D
@@ -63,7 +63,7 @@ sequenceDiagram
     participant L as Laravel
     participant D as Database
     participant C as Cache
-    
+
     U->>B: Navigate to page
     B->>W: HTTP Request
     W->>L: Route to Controller
@@ -94,7 +94,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     CONTACT_SUBMISSIONS {
         int id PK
         string name
@@ -105,7 +105,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     PAGES {
         int id PK
         string slug
@@ -115,7 +115,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    
+
     USERS ||--o{ CONTACT_SUBMISSIONS : "submits"
     PAGES ||--o{ CONTACT_SUBMISSIONS : "referenced_from"
 ```
@@ -128,19 +128,19 @@ graph LR
         A[Source Files] --> B[Vite Build]
         B --> C[Optimized Assets]
     end
-    
+
     subgraph "Component Structure"
         D[Master Layout] --> E[Page Content]
         E --> F[Page-specific Styles]
         E --> G[Page-specific Scripts]
     end
-    
+
     subgraph "Styling System"
         H[TailwindCSS] --> I[Utility Classes]
         J[Custom CSS] --> K[Animations]
         L[Responsive Design] --> M[Mobile First]
     end
-    
+
     C --> D
     I --> D
     K --> D
@@ -152,78 +152,86 @@ graph LR
 ### Backend Technologies
 
 #### Laravel Framework
-- **Version**: 10.x (LTS)
-- **PHP Version**: 8.1+
-- **Architecture**: MVC Pattern
-- **Features**: 
-  - Eloquent ORM
-  - Blade Templating
-  - Artisan CLI
-  - Queue System
-  - Event Broadcasting
+
+-   **Version**: 10.x (LTS)
+-   **PHP Version**: 8.1+
+-   **Architecture**: MVC Pattern
+-   **Features**:
+    -   Eloquent ORM
+    -   Blade Templating
+    -   Artisan CLI
+    -   Queue System
+    -   Event Broadcasting
 
 #### Database
-- **Primary**: MySQL 8.0+
-- **Features**:
-  - ACID Compliance
-  - Transaction Support
-  - Indexing Strategies
-  - Backup & Recovery
+
+-   **Primary**: MySQL 8.0+
+-   **Features**:
+    -   ACID Compliance
+    -   Transaction Support
+    -   Indexing Strategies
+    -   Backup & Recovery
 
 #### Caching
-- **Strategy**: Multi-layer caching
-- **Options**: Redis, Memcached, File
-- **Implementation**: Laravel Cache Facade
+
+-   **Strategy**: Multi-layer caching
+-   **Options**: Redis, Memcached, File
+-   **Implementation**: Laravel Cache Facade
 
 ### Frontend Technologies
 
 #### CSS Framework
-- **TailwindCSS**: Utility-first CSS framework
-- **Version**: 3.x
-- **Features**:
-  - Responsive utilities
-  - Dark mode support
-  - Custom color palette
-  - Component variants
+
+-   **TailwindCSS**: Utility-first CSS framework
+-   **Version**: 3.x
+-   **Features**:
+    -   Responsive utilities
+    -   Dark mode support
+    -   Custom color palette
+    -   Component variants
 
 #### JavaScript
-- **Alpine.js**: Lightweight reactive framework
-- **ES6+**: Modern JavaScript features
-- **Modules**: ES6 module system
-- **Bundling**: Vite for fast builds
+
+-   **Alpine.js**: Lightweight reactive framework
+-   **ES6+**: Modern JavaScript features
+-   **Modules**: ES6 module system
+-   **Bundling**: Vite for fast builds
 
 #### Build Tools
-- **Vite**: Next-generation build tool
-- **Features**:
-  - Hot Module Replacement
-  - Fast builds
-  - Optimized output
-  - Tree shaking
+
+-   **Vite**: Next-generation build tool
+-   **Features**:
+    -   Hot Module Replacement
+    -   Fast builds
+    -   Optimized output
+    -   Tree shaking
 
 ## 🚀 Performance Optimization
 
 ### Frontend Optimization
+
 ```mermaid
 graph TB
     A[Source Assets] --> B[Vite Build]
     B --> C[Minification]
     C --> D[Compression]
     D --> E[CDN Delivery]
-    
+
     F[CSS Optimization] --> G[Purge Unused]
     H[JS Optimization] --> I[Tree Shaking]
     J[Image Optimization] --> K[WebP Format]
-    
+
     B --> F
     B --> H
     B --> J
 ```
 
 ### Backend Optimization
-- **Database**: Query optimization, indexing
-- **Caching**: Redis, application-level caching
-- **Code**: OpCache, autoloader optimization
-- **Assets**: CDN, compression, caching headers
+
+-   **Database**: Query optimization, indexing
+-   **Caching**: Redis, application-level caching
+-   **Code**: OpCache, autoloader optimization
+-   **Assets**: CDN, compression, caching headers
 
 ## 🔒 Security Architecture
 
@@ -238,7 +246,7 @@ graph TB
         F --> G[Authentication]
         G --> H[Authorization]
     end
-    
+
     subgraph "Data Protection"
         I[Data Encryption] --> J[Secure Headers]
         J --> K[Session Security]
@@ -247,13 +255,14 @@ graph TB
 ```
 
 ### Security Features
-- **HTTPS Enforcement**: SSL/TLS encryption
-- **Input Validation**: Sanitization and validation
-- **SQL Injection**: Prepared statements
-- **XSS Protection**: Output escaping
-- **CSRF Protection**: Token-based validation
-- **Authentication**: Secure user management
-- **Authorization**: Role-based access control
+
+-   **HTTPS Enforcement**: SSL/TLS encryption
+-   **Input Validation**: Sanitization and validation
+-   **SQL Injection**: Prepared statements
+-   **XSS Protection**: Output escaping
+-   **CSRF Protection**: Token-based validation
+-   **Authentication**: Secure user management
+-   **Authorization**: Role-based access control
 
 ## 📱 Responsive Design Architecture
 
@@ -263,14 +272,14 @@ graph LR
         A[Mobile Base] --> B[Tablet Enhancements]
         B --> C[Desktop Features]
     end
-    
+
     subgraph "Breakpoint Strategy"
         D[320px] --> E[640px]
         E --> F[768px]
         F --> G[1024px]
         G --> H[1280px]
     end
-    
+
     subgraph "Component Adaptation"
         I[Navigation] --> J[Content Layout]
         J --> K[Interactive Elements]
@@ -279,11 +288,12 @@ graph LR
 ```
 
 ### Responsive Features
-- **Mobile-First**: Base styles for mobile
-- **Progressive Enhancement**: Features for larger screens
-- **Flexible Grid**: CSS Grid and Flexbox
-- **Touch-Friendly**: Mobile-optimized interactions
-- **Performance**: Optimized for mobile networks
+
+-   **Mobile-First**: Base styles for mobile
+-   **Progressive Enhancement**: Features for larger screens
+-   **Flexible Grid**: CSS Grid and Flexbox
+-   **Touch-Friendly**: Mobile-optimized interactions
+-   **Performance**: Optimized for mobile networks
 
 ## 🔄 Deployment Architecture
 
@@ -293,14 +303,14 @@ graph TB
         A[Local Development] --> B[Git Repository]
         B --> C[Staging Environment]
     end
-    
+
     subgraph "Production Environment"
         C --> D[Production Server]
         D --> E[Load Balancer]
         E --> F[Web Servers]
         F --> G[Database Cluster]
     end
-    
+
     subgraph "Monitoring & Maintenance"
         H[Error Logging] --> I[Performance Monitoring]
         I --> J[Security Scanning]
@@ -309,39 +319,45 @@ graph TB
 ```
 
 ### Deployment Strategy
-- **Environment Management**: Dev, Staging, Production
-- **Version Control**: Git-based deployment
-- **Automated Testing**: CI/CD pipeline
-- **Rollback Strategy**: Quick recovery options
-- **Monitoring**: Real-time performance tracking
+
+-   **Environment Management**: Dev, Staging, Production
+-   **Version Control**: Git-based deployment
+-   **Automated Testing**: CI/CD pipeline
+-   **Rollback Strategy**: Quick recovery options
+-   **Monitoring**: Real-time performance tracking
 
 ## 📊 Scalability Considerations
 
 ### Horizontal Scaling
-- **Load Balancing**: Multiple web servers
-- **Database**: Read replicas, sharding
-- **Caching**: Distributed cache systems
-- **CDN**: Global content delivery
+
+-   **Load Balancing**: Multiple web servers
+-   **Database**: Read replicas, sharding
+-   **Caching**: Distributed cache systems
+-   **CDN**: Global content delivery
 
 ### Vertical Scaling
-- **Server Resources**: CPU, RAM, Storage
-- **Database**: Connection pooling, query optimization
-- **Application**: Code optimization, caching strategies
+
+-   **Server Resources**: CPU, RAM, Storage
+-   **Database**: Connection pooling, query optimization
+-   **Application**: Code optimization, caching strategies
 
 ## 🔍 Monitoring & Analytics
 
 ### Performance Metrics
-- **Page Load Time**: Target < 2 seconds
-- **Time to First Byte**: Target < 200ms
-- **Core Web Vitals**: LCP, FID, CLS
-- **Error Rates**: Target < 0.1%
+
+-   **Page Load Time**: Target < 2 seconds
+-   **Time to First Byte**: Target < 200ms
+-   **Core Web Vitals**: LCP, FID, CLS
+-   **Error Rates**: Target < 0.1%
 
 ### Monitoring Tools
-- **Application**: Laravel Telescope, Logs
-- **Server**: Resource monitoring, uptime
-- **Database**: Query performance, connection status
-- **Frontend**: Real User Monitoring (RUM)
+
+-   **Application**: Laravel Telescope, Logs
+-   **Server**: Resource monitoring, uptime
+-   **Database**: Query performance, connection status
+-   **Frontend**: Real User Monitoring (RUM)
 
 ---
 
-*This architecture document is part of the Business Control Systems technical documentation. For more information, contact the development team.*
+_This architecture document is part of the Business Control Systems technical documentation. For more information, contact the development team._
+

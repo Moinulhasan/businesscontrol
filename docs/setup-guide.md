@@ -8,11 +8,11 @@ This guide will help you get the Business Control Systems project up and running
 
 Before you begin, ensure you have the following installed:
 
-- **PHP** 8.1 or higher
-- **Composer** (PHP package manager)
-- **Node.js** 16+ and **npm**
-- **MySQL** 8.0+ or **MariaDB** 10.3+
-- **Git**
+-   **PHP** 8.1 or higher
+-   **Composer** (PHP package manager)
+-   **Node.js** 16+ and **npm**
+-   **MySQL** 8.0+ or **MariaDB** 10.3+
+-   **Git**
 
 ### Check Your Environment
 
@@ -159,29 +159,32 @@ bua/
 
 ## 🌐 Available Routes
 
-| Route | Description | Controller |
-|-------|-------------|------------|
-| `/` | Landing page | - |
-| `/about` | About us page | - |
-| `/support` | Support services | - |
-| `/retail-pos` | Retail POS solutions | - |
-| `/contact` | Contact page | ContactController |
+| Route           | Description             | Controller        |
+| --------------- | ----------------------- | ----------------- |
+| `/`             | Landing page            | -                 |
+| `/about`        | About us page           | -                 |
+| `/support`      | Support services        | -                 |
+| `/retail-pos`   | Retail POS solutions    | -                 |
+| `/contact`      | Contact page            | ContactController |
 | `POST /contact` | Contact form submission | ContactController |
 
 ## 🎨 Frontend Development
 
 ### CSS Framework
-- **TailwindCSS**: Utility-first CSS framework
-- **Custom CSS**: Page-specific styles in `@section('styles')`
+
+-   **TailwindCSS**: Utility-first CSS framework
+-   **Custom CSS**: Page-specific styles in `@section('styles')`
 
 ### JavaScript
-- **Alpine.js**: Lightweight reactive framework
-- **GSAP**: Animation library
-- **Custom JS**: Page-specific scripts in `@section('scripts')`
+
+-   **Alpine.js**: Lightweight reactive framework
+-   **GSAP**: Animation library
+-   **Custom JS**: Page-specific scripts in `@section('scripts')`
 
 ### Component System
-- **Master Layout**: `resources/views/layouts/master.blade.php`
-- **Page Templates**: Extend master layout using `@extends('layouts.master')`
+
+-   **Master Layout**: `resources/views/layouts/master.blade.php`
+-   **Page Templates**: Extend master layout using `@extends('layouts.master')`
 
 ## 🗄️ Database Management
 
@@ -226,14 +229,16 @@ php artisan test --filter TestName
 ## 📱 Responsive Design
 
 ### Breakpoints
-- **Mobile**: < 640px
-- **Tablet**: 640px - 1024px
-- **Desktop**: > 1024px
+
+-   **Mobile**: < 640px
+-   **Tablet**: 640px - 1024px
+-   **Desktop**: > 1024px
 
 ### Testing Responsiveness
-- Use browser dev tools
-- Test on actual devices
-- Check various screen sizes
+
+-   Use browser dev tools
+-   Test on actual devices
+-   Check various screen sizes
 
 ## 🚀 Deployment
 
@@ -250,16 +255,18 @@ php artisan view:cache
 ```
 
 ### Server Requirements
-- PHP 8.1+
-- MySQL 8.0+
-- Composer
-- Node.js 16+ (for build)
+
+-   PHP 8.1+
+-   MySQL 8.0+
+-   Composer
+-   Node.js 16+ (for build)
 
 ## 🔍 Troubleshooting
 
 ### Common Issues
 
 #### 1. Composer Issues
+
 ```bash
 # Clear composer cache
 composer clear-cache
@@ -269,6 +276,7 @@ composer self-update
 ```
 
 #### 2. Node.js Issues
+
 ```bash
 # Clear npm cache
 npm cache clean --force
@@ -279,6 +287,7 @@ npm install
 ```
 
 #### 3. Laravel Issues
+
 ```bash
 # Clear application cache
 php artisan cache:clear
@@ -290,6 +299,7 @@ composer dump-autoload
 ```
 
 #### 4. Database Issues
+
 ```bash
 # Check database connection
 php artisan tinker
@@ -302,40 +312,47 @@ php artisan migrate:fresh
 ### Performance Issues
 
 #### 1. Slow Page Loads
-- Check asset compilation: `npm run build`
-- Verify database queries
-- Enable Laravel debug bar
+
+-   Check asset compilation: `npm run build`
+-   Verify database queries
+-   Enable Laravel debug bar
 
 #### 2. Memory Issues
-- Increase PHP memory limit in `php.ini`
-- Check for memory leaks in code
-- Optimize database queries
+
+-   Increase PHP memory limit in `php.ini`
+-   Check for memory leaks in code
+-   Optimize database queries
 
 ## 📚 Additional Resources
 
 ### Documentation
-- [Laravel Documentation](https://laravel.com/docs)
-- [TailwindCSS Documentation](https://tailwindcss.com/docs)
-- [Alpine.js Documentation](https://alpinejs.dev/)
-- [GSAP Documentation](https://greensock.com/docs/)
+
+-   [Laravel Documentation](https://laravel.com/docs)
+-   [TailwindCSS Documentation](https://tailwindcss.com/docs)
+-   [Alpine.js Documentation](https://alpinejs.dev/)
+-   [GSAP Documentation](https://greensock.com/docs/)
 
 ### Tools
-- **Laravel Telescope**: Debug and monitor your application
-- **Laravel Debugbar**: Development debugging
-- **MySQL Workbench**: Database management
+
+-   **Laravel Telescope**: Debug and monitor your application
+-   **Laravel Debugbar**: Development debugging
+-   **MySQL Workbench**: Database management
 
 ## 🤝 Getting Help
 
 ### Support Channels
-- **Documentation**: Check this guide and README.md
-- **Issues**: Create GitHub issues for bugs
-- **Discussions**: Use GitHub discussions for questions
+
+-   **Documentation**: Check this guide and README.md
+-   **Issues**: Create GitHub issues for bugs
+-   **Discussions**: Use GitHub discussions for questions
 
 ### Development Team
-- **Lead Developer**: [Your Name]
-- **Email**: [your-email@businesscontrol.com]
-- **Phone**: (800) 233-5876
+
+-   **Lead Developer**: [Your Name]
+-   **Email**: [your-email@businesscontrol.com]
+-   **Phone**: (800) 233-5876
 
 ---
 
-*This setup guide is part of the Business Control Systems project documentation. For more detailed information, refer to the main README.md file.*
+_This setup guide is part of the Business Control Systems project documentation. For more detailed information, refer to the main README.md file._
+

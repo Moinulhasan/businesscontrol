@@ -1,113 +1,73 @@
 import './bootstrap';
 
 import Alpine from 'alpinejs';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
-
-// Make GSAP available globally
-window.gsap = gsap;
-window.ScrollTrigger = ScrollTrigger;
-
+// Make Alpine available globally
 window.Alpine = Alpine;
-
 Alpine.start();
 
-// Support page functionality
+// Common JavaScript for Business Control Systems
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle for all pages
+    // Mobile menu toggle
+    initMobileMenu();
+    
+    // Load page-specific JavaScript
+    loadPageSpecificJS();
+    
+    // Initialize common scroll animations
+    initScrollAnimations();
+});
+
+// Mobile Menu Functionality
+function initMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
-    if (mobileMenuButton) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
         mobileMenuButton.addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
-                mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Close mobile menu when window is resized to desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 1024) {
+                mobileMenu.classList.add('hidden');
             }
         });
     }
+}
+
+// Load Page-Specific JavaScript
+function loadPageSpecificJS() {
+    const currentPath = window.location.pathname;
     
-    // Support page specific functionality
-    if (window.location.pathname === '/support') {
-        console.log('Support page loaded successfully!');
-        
-        // Services Slider Functionality
-        const servicesTrack = document.getElementById('servicesTrack');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        if (servicesTrack && prevBtn && nextBtn) {
-            let currentPosition = 0;
-            const cardWidth = 320; // w-80 = 320px
-            const maxPosition = servicesTrack.children.length * cardWidth - window.innerWidth + 100;
-            
-            function updateSliderPosition() {
-                servicesTrack.style.transform = `translateX(-${currentPosition}px)`;
-            }
-            
-            function slideNext() {
-                if (currentPosition < maxPosition) {
-                    currentPosition += cardWidth;
-                    if (currentPosition > maxPosition) {
-                        currentPosition = maxPosition;
-                    }
-                    updateSliderPosition();
-                }
-            }
-            
-            function slidePrev() {
-                if (currentPosition > 0) {
-                    currentPosition -= cardWidth;
-                    if (currentPosition < 0) {
-                        currentPosition = 0;
-                    }
-                    updateSliderPosition();
-                }
-            }
-            
-            // Event listeners
-            nextBtn.addEventListener('click', slideNext);
-            prevBtn.addEventListener('click', slidePrev);
-            
-            // Auto-play slider
-            let autoPlayInterval = setInterval(slideNext, 5000);
-            
-            // Pause auto-play on hover
-            servicesTrack.addEventListener('mouseenter', () => {
-                clearInterval(autoPlayInterval);
-            });
-            
-            servicesTrack.addEventListener('mouseleave', () => {
-                autoPlayInterval = setInterval(slideNext, 5000);
-            });
-            
-            // Touch/swipe support for mobile
-            let startX = 0;
-            let endX = 0;
-            
-            servicesTrack.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-            });
-            
-            servicesTrack.addEventListener('touchend', (e) => {
-                endX = e.changedTouches[0].clientX;
-                const diff = startX - endX;
-                
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        slideNext();
-                    } else {
-                        slidePrev();
-                    }
-                }
-            });
-            
-            console.log('Services slider initialized successfully!');
-        }
+    // Dynamically import page-specific JavaScript
+    switch(currentPath) {
+        case '/':
+            import('./landing.js').catch(err => console.log('Landing JS not found'));
+            break;
+        case '/support':
+            import('./support.js').catch(err => console.log('Support JS not found'));
+            break;
+        case '/contact':
+            import('./contact.js').catch(err => console.log('Contact JS not found'));
+            break;
+        case '/about':
+        case '/retail-pos':
+            // These pages can use common functionality for now
+            break;
     }
-    
-    // Simple scroll animations for all pages
+}
+
+// Common Scroll Animations
+function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -116,25 +76,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const target = entry.target;
-                if (!target.classList.contains('animated')) {
-                    target.classList.add('animated');
-                    target.style.opacity = '0';
-                    target.style.transform = 'translateY(30px)';
-                    target.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                    
-                    setTimeout(() => {
-                        target.style.opacity = '1';
-                        target.style.transform = 'translateY(0)';
-                    }, 100);
-                }
+                entry.target.classList.add('animate');
             }
         });
     }, observerOptions);
     
-    // Observe sections for scroll animations
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        observer.observe(section);
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .scale-in');
+    animatedElements.forEach(el => observer.observe(el));
+}
+
+// Smooth Scrolling for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
+
+// Utility Functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Export functions for use in other modules
+window.BCS = {
+    debounce,
+    throttle,
+    initMobileMenu,
+    initScrollAnimations
+};
