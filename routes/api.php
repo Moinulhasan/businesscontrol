@@ -14,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('submit-contact-one-step',[\App\Http\Controllers\ContactController::class,'store'])->name('submit-contact-one-step');

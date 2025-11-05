@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,12 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store']);
+Route::post('/contact', [ContactController::class, 'store'])->name('store-contact');
+Route::post('submit-contact-details',[ContactController::class,'submitContact']);
+// Country-specific routes
+Route::get('/countries', [App\Http\Controllers\CountryController::class, 'index'])->name('countries.index');
+Route::get('/countries/{country}', [App\Http\Controllers\CountryController::class, 'show'])->name('countries.show');
+Route::get('/countries/{country}/services/{service}', [App\Http\Controllers\CountryController::class, 'getServiceDetails'])->name('countries.service.details');
 
 Route::get('/welcome', function () {
     return view('welcome');

@@ -37,7 +37,7 @@
                 Multiple ways to reach our team of POS experts
             </p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <!-- Phone -->
             <div class="contact-info-card scale-in stagger-1">
@@ -50,7 +50,7 @@
                 <p class="contact-info-text">(800) 233-5876</p>
                 <p class="contact-info-text">Mon-Fri: 9AM-6PM EST</p>
             </div>
-            
+
             <!-- Email -->
             <div class="contact-info-card scale-in stagger-2">
                 <div class="contact-info-icon bg-gradient-to-br from-green-500 to-blue-600">
@@ -62,7 +62,7 @@
                 <p class="contact-info-text">info@businesscontrol.com</p>
                 <p class="contact-info-text">We respond within 24 hours</p>
             </div>
-            
+
             <!-- Address -->
             <div class="contact-info-card scale-in stagger-3">
                 <div class="contact-info-icon bg-gradient-to-br from-purple-500 to-pink-600">
@@ -90,37 +90,37 @@
                     Fill out the form below and we'll get back to you as soon as possible
                 </p>
             </div>
-            
+
             <div class="contact-form p-8 scale-in stagger-2">
                 <form id="contactForm" method="POST" action="/contact">
                     @csrf
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="form-group">
                             <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
+                            <input type="text" id="name" name="full_name" class="form-input" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email" class="form-label">Email Address *</label>
                             <input type="email" id="email" name="email" class="form-input" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="phone" class="form-label">Phone Number</label>
                             <input type="tel" id="phone" name="phone" class="form-input">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company" class="form-label">Company Name</label>
                             <input type="text" id="company" name="company" class="form-input">
                         </div>
                     </div>
-                    
+
                     <div class="form-group mt-6">
                         <label for="message" class="form-label">Message *</label>
                         <textarea id="message" name="message" rows="6" class="form-textarea" placeholder="Tell us about your business needs and how we can help..." required></textarea>
                     </div>
-                    
+
                     <div class="text-center mt-8">
                         <button type="submit" id="submitBtn" class="submit-btn">
                             Send Message
@@ -139,10 +139,10 @@
             Ready to Transform Your <span class="text-yellow-300">Business</span>?
         </h2>
         <p class="text-xl text-gray-100 mb-12 max-w-3xl mx-auto slide-up stagger-1">
-            Join thousands of businesses that trust Business Control Systems for their POS solutions. 
+            Join thousands of businesses that trust Business Control Systems for their POS solutions.
             Get started today with a free consultation.
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <div class="cta-card p-6 text-center scale-in stagger-2">
                 <div class="text-2xl font-bold text-gray-900 mb-2">(800) 233-5876</div>
@@ -160,3 +160,4 @@
 @section('scripts')
 @vite(['resources/js/contact.js'])
 @endsection
+

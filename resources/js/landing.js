@@ -152,3 +152,4 @@ function initParallax() {
 if (window.innerWidth > 768) {
     initParallax();
 }
+
