@@ -29,11 +29,11 @@ Route::get('/about', function () {
 
 Route::get('/retail-pos', function () {
     return view('retail-pos');
-});
+})->name('retail-pos');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('store-contact');
 Route::post('submit-contact-details',[ContactController::class,'submitContact']);

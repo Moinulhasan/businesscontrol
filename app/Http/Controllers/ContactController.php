@@ -39,6 +39,7 @@ class ContactController extends Controller
                 'is_one_step' => $request->routeIs('submit-contact-one-step') ? 1 : 0
             ], function ($message) use ($request) {
                 $message->to('support@businesscontrol.com')
+//                $message->to('moinulhasan.4960@gmail.com')
                     ->subject("New Contact Form Message from  .$request->full_name");
             });
             // For now, just return success response

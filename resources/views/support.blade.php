@@ -16,8 +16,8 @@
                     <span class="gradient-text">Support Services</span>
                 </h1>
                 <p class="text-xl text-gray-600 mb-8 slide-up stagger-1">
-                    BCSC spares no effort in ensuring our customers receive the highest level of service in the industry. 
-                    Throughout the process of designing and implementing custom configured point of sale systems and inventory management software, 
+                    BCSC spares no effort in ensuring our customers receive the highest level of service in the industry.
+                    Throughout the process of designing and implementing custom configured point of sale systems and inventory management software,
                     we unfailingly maintain our principles of <strong>Value, Honesty, Pride, and Fairness</strong> in meeting your goals and expectations.
                 </p>
                 <div class="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-6 py-3 slide-up stagger-2">
@@ -51,7 +51,7 @@
                     Comprehensive support covering every aspect of your POS system implementation and maintenance
                 </p>
             </div>
-            
+
             <!-- Services Slider Container -->
             <div class="relative">
                 <div class="services-slider overflow-hidden">
@@ -193,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Navigation Arrows -->
                 <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 hover:text-blue-600 p-3 rounded-full shadow-lg transition-all duration-300 z-10" id="prevBtn">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,14 +216,14 @@
                 Ready to Get <span class="text-yellow-300">Premium Support</span>?
             </h2>
             <p class="text-xl text-gray-100 mb-12 max-w-3xl mx-auto slide-up stagger-1">
-                Contact Business Control Systems today to find out how industry-leading service and properly configured 
+                Contact Business Control Systems today to find out how industry-leading service and properly configured
                 point of sale systems and inventory control software can help your business attain peak efficiency.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <div class="bg-white rounded-2xl p-6 text-center scale-in stagger-2">
-                    <div class="text-2xl font-bold text-gray-900 mb-2">(800) 233-5876</div>
-                    <div class="text-gray-600">Ext. 233</div>
+                    <div class="text-2xl font-bold text-gray-900 mb-2">1 303 519 9549</div>
+{{--                    <div class="text-gray-600">Ext. 233</div>--}}
                 </div>
                 <a href="/contact" class="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 scale-in stagger-3">
                     Contact Us Online

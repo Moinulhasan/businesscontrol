@@ -47,7 +47,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-info-title">Phone</h3>
-                <p class="contact-info-text">(800) 233-5876</p>
+                <p class="contact-info-text">1 303 519 9549</p>
                 <p class="contact-info-text">Mon-Fri: 9AM-6PM EST</p>
             </div>
 
@@ -59,7 +59,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-info-title">Email</h3>
-                <p class="contact-info-text">info@businesscontrol.com</p>
+                <p class="contact-info-text">support@businesscontrol.com</p>
                 <p class="contact-info-text">We respond within 24 hours</p>
             </div>
 
@@ -72,7 +72,7 @@
                     </svg>
                 </div>
                 <h3 class="contact-info-title">Address</h3>
-                <p class="contact-info-text">123 Business Street<br>Suite 100<br>New York, NY 10001</p>
+                <p class="contact-info-text">101 E 5th St<br>Loveland<br>Colorado- 80537</p>
             </div>
         </div>
     </div>
@@ -145,7 +145,7 @@
 
         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <div class="cta-card p-6 text-center scale-in stagger-2">
-                <div class="text-2xl font-bold text-gray-900 mb-2">(800) 233-5876</div>
+                <div class="text-2xl font-bold text-gray-900 mb-2">1 303 519 9549</div>
                 <div class="text-gray-600">Call for immediate assistance</div>
             </div>
             <a href="/retail-pos" class="bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 scale-in stagger-3">
